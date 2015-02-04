@@ -1,0 +1,1775 @@
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RPR]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLADemo.main(HLADemo.java:40)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 12 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 19 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 20 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLADemo.main(HLADemo.java:40)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 8 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 12 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 19 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 20 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RPR]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLADemo.main(HLADemo.java:40)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 12 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 19 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 20 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLADemo.main(HLADemo.java:40)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 8 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 12 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 19 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 20 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RPR]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLADemo.main(HLADemo.java:40)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 12 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 19 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 20 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLADemo.main(HLADemo.java:40)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 8 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 12 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 19 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 20 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RPR]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLADemo.main(HLADemo.java:40)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 12 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 19 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 20 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLADemo.main(HLADemo.java:40)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 8 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 12 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 19 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 20 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RPR]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLADemo.main(HLADemo.java:40)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 12 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 19 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 20 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLADemo.main(HLADemo.java:40)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 8 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 12 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 19 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 20 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RPR]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:41)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:41)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RprFederate]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:41)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:41)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RprFederate]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:41)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:41)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RprFederate]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:41)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:41)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RprFederate]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RprFederate]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RprFederate]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RprFederate]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RprFederate]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:44)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RprFederate]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:47)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:47)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RprFederate]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:47)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:47)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RprFederate]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:47)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:47)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RprFederate]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:47)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:47)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RprFederate]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:47)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:47)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RprFederate]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:47)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:47)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc.jgroups: ERROR Failed to connect to channel [RprFederate]: unable to setup the protocol stack
+org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:47)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more
+ERROR [main] portico.lrc: unable to setup the protocol stack
+org.portico.lrc.compat.JRTIinternalError: unable to setup the protocol stack
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:167)
+	at org.portico.bindings.jgroups.JGroupsConnection.getFederationChannel(JGroupsConnection.java:216)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:229)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at hlademo.HLAGateway.<init>(HLAGateway.java:47)
+	at hlademo.HLADemo.main(HLADemo.java:42)
+Caused by: org.jgroups.ChannelException: unable to setup the protocol stack
+	at org.jgroups.JChannel.init(JChannel.java:1706)
+	at org.jgroups.JChannel.<init>(JChannel.java:243)
+	at org.jgroups.JChannel.<init>(JChannel.java:226)
+	at org.portico.bindings.jgroups.channel.FederationChannel.constructChannel(FederationChannel.java:188)
+	at org.portico.bindings.jgroups.channel.FederationChannel.connect(FederationChannel.java:148)
+	... 9 more
+Caused by: java.lang.Exception: Property assignment of bind_addr in UDP with original property value SITE_LOCAL and converted to null could not be assigned. Exception is java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:939)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.createLayer(Configurator.java:1251)
+	at org.jgroups.stack.Configurator$ProtocolConfiguration.access$000(Configurator.java:1124)
+	at org.jgroups.stack.Configurator.createProtocols(Configurator.java:368)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:88)
+	at org.jgroups.stack.Configurator.setupProtocolStack(Configurator.java:54)
+	at org.jgroups.stack.ProtocolStack.setup(ProtocolStack.java:453)
+	at org.jgroups.JChannel.init(JChannel.java:1702)
+	... 13 more
+Caused by: java.lang.Exception: Conversion of bind_addr in UDP with original property value SITE_LOCAL failed. Exception is java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:88)
+	at org.jgroups.stack.Configurator.resolveAndAssignField(Configurator.java:933)
+	... 20 more
+Caused by: java.net.UnknownHostException: SITE_LOCAL: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at java.net.InetAddress.getByName(InetAddress.java:1055)
+	at org.jgroups.conf.PropertyConverters$Default.convert(PropertyConverters.java:181)
+	at org.jgroups.conf.PropertyHelper.getConvertedValue(PropertyHelper.java:85)
+	... 21 more

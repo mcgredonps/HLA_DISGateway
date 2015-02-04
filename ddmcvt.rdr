@@ -1,0 +1,790 @@
+;; Hey, emacs, display this as -*-lisp-*-
+
+;; these values for the latitude and longitude need to cover the whole
+;; playbox..  In other words, a federate does NOT adjust these even if
+;; their terrain database is only a subset of this area.
+;;
+;; this values below are in degrees, using the following logic:
+;;
+;;   the origin is the intersection of the equator and the prime
+;;   meridian and is represented as (lat=0.0, long=0.0)
+;;
+;;   a latitiude value ranges from -90 (south pole) to 90 (north pole)
+;;   a longitude value ranges from -180 (west of PM) to 180 (east of PM)
+;;
+;; so, a pair like (lat=30, long=50) means 30 degrees north of the equator 
+;; and  50 degrees east of the prime meridian.
+;;
+;; another example, (lat=-30, long=-125) means 30 degrees south of the
+;; equator, and 125 degrees west of the prime meridian.
+;;
+
+;; The DCEE terrain is whole-world longitude and 75S to 75N latitude
+
+"LATITUDE_BOUNDS"  {  -75.0   75.0 }
+"LONGITUDE_BOUNDS" {    0.0  360.0 }
+
+(ConverterSet
+    (Name SPP)
+    (Type DDM)
+    (Description "Converters required for DCEE DDM mappings.")
+    (ConverterClass
+        (Name SpaceOnly)
+        (Converter
+            (Name "AmbientEnvironment")
+            (Description "Ambient Environmentals")
+            (Parameters
+                (Space "ambient_environment_space")
+            )
+        )
+        (Converter
+            (Name "JSAFSpace")
+            (Description "clutter control and interactions")
+            (Parameters
+                (Space "fedstate_space")
+            )
+        )
+        (Converter
+            (Name "DataLink")
+            (Description "C4I stuff")
+            (Parameters
+                (Space "data_link_space")
+            )
+        )
+        (Converter
+            (Name "SonobuoyControl")
+            (Description "Sonobuoy Control BOM")
+            (Parameters
+                (Space "uwa_emission_space")
+            )
+        )
+        (Converter
+            (Name "UWAEmission")
+            (Description "UWA Emission stuff")
+            (Parameters
+                (Space "uwa_emission_space")
+            )
+        )
+        (Converter
+            (Name "SetCommentSpace")
+            (Description "SetCommentSpace")
+            (Parameters
+                (Space "set_comment_space")
+            )
+        )
+        (Converter
+            (Name "ClutterControl")
+            (Description "Clutter Control")
+            (Parameters
+                (Space "clutter_control_space")
+            )
+        )
+        (Converter
+            (Name "ClutterIntersection")
+            (Description "Clutter Intersection")
+            (Parameters
+                (Space "clutter_intersection_space")
+            )
+        )
+        (Converter
+            (Name "DamageAssessment")
+            (Description "Damage Assessment")
+            (Parameters
+                (Space "damage_assessment_space")
+            )
+        )
+        (Converter
+            (Name "FedState")
+            (Description "Federate State")
+            (Parameters
+                (Space "fedstate_space")
+            )
+        )
+        (Converter
+            (Name "BattlemasterControl")
+            (Description "Battlemaster Control")
+            (Parameters
+                (Space "battlemaster_control_space")
+            )
+        )
+        (Converter
+            (Name "AssetManagerRequest")
+            (Description "Force value enumerated axis")
+            (Parameters
+                (Space "asset_manager_request_space")
+            )
+        )
+        (Converter
+            (Name "AAR")
+            (Description "AAR")
+            (Parameters
+                (Space "aar_space")
+            )
+        )
+        (Converter
+            (Name "FTV")
+            (Description "FTV stuff")
+            (Parameters
+                (Space "data_link_space")
+            )
+        )
+        (Converter
+            (Name "Collision")
+            (Description "Supports collision interactions")
+            (Parameters
+                (Space "collision_space")
+            )
+        )
+        (Converter
+            (Name "ASTABS")
+            (Description "Automated Status Boards")
+            (Parameters
+                (Space "astabs_space")
+            )
+        )
+        (Converter
+            (Name "C2Broadcast")
+            (Description "C2 data that all sims should receive")
+            (Parameters
+                (Space "c2_broadcast_space")
+            )
+        )
+        (Converter
+            (Name "LogisticsAssessment")
+            (Description "Support Logistics interactions")
+            (Parameters
+                (Space "damage_assessment_space")
+            )
+        )
+        (Converter
+            (Name "Hawklink")
+            (Description "Support Hawklink interactions")
+            (Parameters
+                (Space "hawklink_space")
+            )
+        )
+        (Converter
+            (Name "TACAN")
+            (Description "Support Tacan objects")
+            (Parameters
+                (Space "tacan_space")
+            )
+        )        
+        (Converter
+            (Name "Environment")
+            (Description "Atmosphere, Ocean")
+            (Parameters
+                (Space "ambient_environment_space")
+            )
+        )
+        (Converter
+            (Name "ATLoS")
+            (Description "TL and Reverb Requests and Responses")
+            (Parameters
+                (Space "ambient_environment_space")
+            )
+        )
+        (Converter
+            (Name "ContactNetBroadcast")
+            (Description "ContactNet data that all sims should receive")
+            (Parameters
+                (Space "contactnet")
+            )
+        )
+        (Converter
+            (Name "IFF")
+            (Description "IFF BOM")
+            (Parameters
+                (Space "iff_space")
+            )
+        )
+        (Converter
+            (Name "DistMasterSpace")
+            (Description "Dist Master")
+            (Parameters
+                (Space "linkc2")
+            )
+        )
+        (Converter
+            (Name "NasmpExCon")
+            (Description "NASMP Ex Conf")
+            (Parameters
+                (Space "nasmp_excon_space")
+            )
+        )
+        (Converter
+            (Name "NasmpALM")
+            (Description "NASMP ALM")
+            (Parameters
+                (Space "nasmp_alm_space")
+            )
+        )
+        (Converter
+            (Name "NasmpScoring")
+            (Description "NASMP Scoring")
+            (Parameters
+                (Space "detonation_space")
+            )
+        )
+        (Converter
+            (Name "AIS")
+            (Description "AIS BOM")
+            (Parameters
+                (Space "iff")
+            )
+        )
+    )
+    (ConverterClass
+        (Name MapDimensions)
+        (Converter
+            (Name "TimeSyncMessageType")
+            (Description "TimeSync message type enumerated axis")
+            (Parameters
+                (Space "timesync_space")
+                (Dimension
+                    (Name "apptype")
+                    (InputType UINT8)
+                    (MappingType ENUMERATED)
+                    (InputRange 0 1)
+                )
+            )
+        )
+        (Converter
+            (Name "TracksByForceState")
+            (Description "Track routing by force and state")
+            (Parameters
+                (Space "track_space")
+                (Dimension
+                    (Name "force")
+                    (InputType UINT8)
+                    (MappingType ENUMERATED)
+                    (InputRange 0 3)
+                )
+                (Dimension
+                    (Name "state")
+                    (InputType UINT32)
+                    (MappingType ENUMERATED)
+                    (InputRange 0 14)
+                )
+            )
+        )
+        (Converter
+            (Name "BlipsByForceSensor")
+            (Description "Track routing by force and sensor mode")
+            (Parameters
+                (Space "blip_space")
+                (Dimension
+                    (Name "force")
+                    (InputType UINT8)
+                    (MappingType ENUMERATED)
+                    (InputRange 0 3)
+                )
+                (Dimension
+                    (Name "mode")
+                    (InputType UINT32)
+                    (MappingType ENUMERATED)
+                    (InputRange 0 21)
+                )
+            )
+        )
+        (Converter
+            (Name "TMRByForce")
+            (Description "Force value enumerated axis")
+            (Parameters
+                (Space "track_modification_space")
+                (Dimension
+                    (Name "force")
+                    (InputType UINT8)
+                    (MappingType ENUMERATED)
+                    (InputRange 0 3)
+                )
+            )
+        )
+        (Converter
+            (Name "SensorFootprintByForce")
+            (Description "Force value enumerated axis")
+            (Parameters
+                (Space "sensor_footprint_space")
+                (Dimension
+                    (Name "force")
+                    (InputType UINT8)
+                    (MappingType ENUMERATED)
+                    (InputRange 0 3)
+                )
+            )
+        )
+        (Converter
+            (Name "SensorDetectionByForce")
+            (Description "Force value enumerated axis")
+            (Parameters
+                (Space "sensor_detection_space")
+                (Dimension
+                    (Name "force")
+                    (InputType UINT8)
+                    (MappingType ENUMERATED)
+                    (InputRange 0 3)
+                )
+            )
+        )
+        (Converter
+            (Name "ContactReportByResultMode")
+            (Description "Force value enumerated axis")
+            (Parameters
+                (Space "contact_report_space")
+                (Dimension
+                    (Name "detection_status")
+                    (InputType UINT16)
+                    (MappingType ENUMERATED)
+                    (InputRange 0 8)
+                )
+                (Dimension
+                    (Name "intended_receiver")
+                    (InputType UINT32)
+                    (MappingType ENUMERATED)
+                    (InputRange 0 11)
+                )
+;;              (Dimension
+;;                  (Name "sensor_mode")
+;;                  (InputType UINT32)
+;;                  (MappingType ENUMERATED)
+;;                  (InputRange 0 29)
+;;              )
+            )
+        )
+        (Converter
+            (Name "AttackOrderByForce")
+            (Description "Force value enumerated axis")
+            (Parameters
+                (Space "attack_order_space")
+                (Dimension
+                    (Name "force")
+                    (InputType UINT8)
+                    (MappingType ENUMERATED)
+                    (InputRange 0 3)
+                )
+            )
+        )
+        (Converter
+            (Name "SurveillanceOrderByForce")
+            (Description "Force value enumerated axis")
+            (Parameters
+                (Space "surveil_order_space")
+                (Dimension
+                    (Name "force")
+                    (InputType UINT8)
+                    (MappingType ENUMERATED)
+                    (InputRange 0 3)
+                )
+            )
+        )
+        (Converter
+            (Name "RadarFrequency")
+            (Description "Radar frequency axis / force axis")
+            (Parameters
+                (Space "emission_space")
+                (Dimension
+                    (Name "frequency")
+                    (InputType FLOAT64)
+                    (MappingType LINEAR)
+                    (Scale 1000000.0) ;; ie. all the values below are in Mhz
+                    (InputRange 75.0 45000.0) ;;modified from 45000000.0
+                    (Threshold 1.0)
+                )
+                (Dimension
+                    (Name "force")
+                    (InputType UINT8)
+                    (MappingType ENUMERATED)
+                    (InputRange 0 3)
+                )
+            )
+        )
+        (Converter
+            (Name "RadioFrequency")
+            (Description "Radio frequency axis")
+            (Parameters
+                (Space "radio_space")
+                (Dimension
+                    (Name "frequency")
+                    (InputType FLOAT64)
+                    (MappingType PARTITION)
+                    (Scale 1000000.0) ;; ie. all the values below are in Mhz
+                    (Values 
+
+
+       ;; 26 values divide the range into 25 bins, numbered 0 thru 24...  
+ 
+         0.0    ;;     0hz  >= bin0  <   15Mhz    ;; IWEG/DCE
+        15.0    ;;   15Mhz  >= bin1  <   35Mhz    ;; CATT/DICE
+        35.0    ;;   35Mhz  >= bin2  <   81Mhz    ;; IWEG/DCE
+        81.0    ;;   81Mhz  >= bin3  <  100Mhz    ;; IWEG/DCE
+       100.0    ;;  100Mhz  >= bin4  <  150Mhz    ;; IWEG/DCE
+       150.0    ;;  150Mhz  >= bin5  <  200Mhz    ;; IWEG/DCE
+       200.0    ;;  200Mhz  >= bin6  <  250Mhz    ;; SOAR/GUARD (243Mhz)
+       250.0    ;;  250Mhz  >= bin7  <  300Mhz    ;; SOAR - misc
+       300.0    ;;  300Mhz  >= bin8  <  350Mhz    ;; SOAR/LAWS (328Mhz)
+       350.0    ;;  350Mhz  >= bin9  <  375Mhz    ;; unused
+       375.0    ;;  375Mhz  >= bin10 <  500Mhz    ;; DBST
+       500.0    ;;  500Mhz  >= bin11 <  550Mhz    ;; unused
+       550.0    ;;  550Mhz  >= bin12 <  600Mhz    ;; unused
+       600.0    ;;  600Mhz  >= bin13 <  625Mhz    ;; JSAF OPFOR ADA
+       625.0    ;;  625Mhz  >= bin14 <  700Mhz    ;; JSAF OPFOR
+       700.0    ;;  700Mhz  >= bin15 <  800Mhz    ;; JSAF BLUEFOR
+       800.0    ;;  800Mhz  >= bin16 <  830Mhz    ;; JSAF blue autoradio/c4i
+       830.0    ;;  830Mhz  >= bin17 <  840Mhz    ;; JSAF red autoradio/c4i
+       840.0    ;;  840Mhz  >= bin18 <  850Mhz    ;; JSAF green autoradio/c4i
+       850.0    ;;  850Mhz  >= bin19 <  900Mhz    ;; unused
+       900.0    ;;  900Mhz  >= bin20 <    1Ghz    ;; unused
+      1000.0    ;;    1Ghz  >= bin21 < 2.75Ghz    ;; IWEG/DCE
+      2750.0    ;; 2.75Ghz  >= bin22 <    4Ghz    ;; unused
+      4000.0    ;;    4Ghz  >= bin23 <    6Ghz    ;; unused
+      6000.0    ;;    6Ghz  >= bin24 <    8Ghz    ;; unused
+      
+      8000.0    ;; the last frequency is not a valid frequency to use...
+                            )
+                )
+            )
+        )
+        (Converter
+            (Name "DynamicTerrainByDTSpace")
+            (Description "DT Space enumerated axis")
+            (Parameters
+                (Space "dynamic_terrain_space")
+                (Dimension
+                    (Name "update_type")
+                    (InputType UINT32)
+                    (MappingType ENUMERATED)
+                    (InputRange 0 3)
+                )
+            )
+        )
+        (Converter
+            (Name "C2Permission")
+            (Description "C2 Permission node channel")
+            (Parameters
+                (Space "c2_permission_space")
+                (Dimension
+                    (Name "permission_channel")
+                    (InputType UINT32)
+                    (MappingType MODULO)
+                    (Range 257)
+                )
+            )
+        )
+        (Converter
+            (Name "C2Request")
+            (Description "C2 Simulator request channel")
+            (Parameters
+                (Space "c2_request_space")
+                (Dimension
+                    (Name "sim_channel")
+                    (InputType UINT32)
+                    (MappingType MODULO)
+                    (Range 127)
+                )
+            )
+        )
+        (Converter
+            (Name "C2Scenario")
+            (Description "C2 Simulator scenario channel")
+            (Parameters
+                (Space "c2_scenario_space")
+                (Dimension
+                    (Name "sim_channel")
+                    (InputType UINT32)
+                    (MappingType MODULO)
+                    (Range 127)
+                )
+            )
+        )
+        (Converter
+            (Name "ContactCloudChannel")
+            (Description "Contact routing by destination cloud channel")
+            (Parameters
+                (Space "contact_clouds")
+                (Dimension
+                    (Name "channel")
+                    (InputType UINT32)
+                    (MappingType MODULO)
+                    (Range 179)
+                )
+            )
+        )
+        (Converter
+            (Name "ContactRequestChannel")
+            (Description "Contact routing by ContactNet channel")
+            (Parameters
+                (Space "contact_request")
+                (Dimension
+                    (Name "channel")
+                    (InputType UINT32)
+                    (MappingType MODULO)
+                    (Range 17)
+                )
+            )
+        )
+    )
+    (ConverterClass
+        (Name GCSToLatLon)
+        (Converter
+            (Name "FireGeographic")
+            (Description "Fire Geographic")
+            (Parameters
+                (Space "fire_space")
+                (LatitudeBounds LATITUDE_BOUNDS)
+                (LongitudeBounds LONGITUDE_BOUNDS)
+                (Threshold 50.0)
+            )
+        )
+        (Converter
+            (Name "Sonar")
+            (Description "ActiveSonar, ActiveSonarBeam, PropulsionNoise, AcousticTransient")
+            (Parameters
+                (Space "uwa_emission_space")
+                (LatitudeBounds LATITUDE_BOUNDS)
+                (LongitudeBounds LONGITUDE_BOUNDS)
+                (Threshold 50.0)
+            )
+        )
+        (Converter
+            (Name "DetonationGeographic")
+            (Description "Detonation Geographic")
+            (Parameters
+                (Space "detonation_space")
+                (LatitudeBounds LATITUDE_BOUNDS)
+                (LongitudeBounds LONGITUDE_BOUNDS)
+                (Threshold 50.0)
+            )
+        )
+        (Converter
+            (Name "LaserGeographic")
+            (Description "Laser Geographic")
+            (Parameters
+                (Space "emission_space") ;; formerly laser_space
+                (LatitudeBounds LATITUDE_BOUNDS)
+                (LongitudeBounds LONGITUDE_BOUNDS)
+            )
+        )
+        (Converter
+            (Name "IFFGeographic")
+            (Description "IFF Geographic")
+            (Parameters
+                (Space "iff_space")
+                (LatitudeBounds LATITUDE_BOUNDS)
+                (LongitudeBounds LONGITUDE_BOUNDS)
+                (Threshold 100.0)
+            )
+        )
+        (Converter
+            (Name "EngineeringGeographic")
+            (Description "Engineering Geographic")
+            (Parameters
+                (Space "engineering_space")
+                (LatitudeBounds LATITUDE_BOUNDS)
+                (LongitudeBounds LONGITUDE_BOUNDS)
+                (Threshold 100.0)
+            )
+        )
+        (Converter
+            (Name "AcSigGeographic")
+            (Description "AcousticSig Geographic")
+            (Parameters
+                (Space "uwa_emission_space")
+                (LatitudeBounds LATITUDE_BOUNDS)
+                (LongitudeBounds LONGITUDE_BOUNDS)
+                (Threshold 100.0)
+            )
+        )
+        (Converter
+            (Name "UWAEGeographic")
+            (Description "Underwater Acoustics Emission Geographic")
+            (Parameters
+                (Space "uwa_emission_space")
+                (LatitudeBounds LATITUDE_BOUNDS)
+                (LongitudeBounds LONGITUDE_BOUNDS)
+                (Threshold 100.0)
+            )
+        )
+        (Converter
+            (Name "ActiveSonar")
+            (Description "ActiveSonar, ActiveSonarBeam, PropulsionNoise")
+            (Parameters
+                (Space "uwa_emission_space")
+                (LatitudeBounds LATITUDE_BOUNDS)
+                (LongitudeBounds LONGITUDE_BOUNDS)
+                (Threshold 100.0)
+            )
+        )
+        (Converter
+            (Name "AcousticTransient")
+            (Description "AcousticTransient")
+            (Parameters
+                (Space "ambient_environment_space")
+                (LatitudeBounds LATITUDE_BOUNDS)
+                (LongitudeBounds LONGITUDE_BOUNDS)
+                (Threshold 100.0)
+            )
+        )
+    )
+    (ConverterClass
+        (Name ForceGuiseGCSToSpaceLatLon)
+        (Converter
+            (Name "ForceGuiseGCSToSpaceLatLon")
+            (Description "Platform Custom Space Selector")
+            (Parameters
+                (LatitudeBounds  LATITUDE_BOUNDS )
+                (LongitudeBounds LONGITUDE_BOUNDS)
+                (Thresholds (Ground       5.0)
+                            (Air       1000.0)
+                            (Sea       1000.0)
+                            (Human        0.0)
+                            (Aggregate  100.0)
+                )
+            )
+        )
+    )
+    (ConverterClass
+        (Name GCS_To_Spatial)
+        (Converter
+            (Name "GCS_To_Spatial")
+            (Description "Converts GCS Pos/Vel/Ori + guise + force + DR data to Spatial (+ others) and does Routing Space Selection")
+            (Parameters
+                (LatitudeBounds  LATITUDE_BOUNDS  )
+                (LongitudeBounds LONGITUDE_BOUNDS )
+                (Thresholds (Ground       5.0)
+                            (Air       1000.0)
+                            (Sea       1000.0)
+                            (Human        0.0)
+                            (Aggregate  100.0)
+                )
+            )
+        )
+    )
+
+
+    ;; Space selector converters
+    (ConverterClass
+        (Name SpaceSelection)
+        (Converter
+            (Name "ContactSpaceSelector")
+            (Description "Switch to the display appspace when there is no destination")
+            (Parameters
+                (InputType UINT8)
+                (Selections
+                    (Selector (Value 0) (Space "contact_display"))
+        )
+            )
+        )
+    )
+
+
+
+
+    ;; application space converters
+
+    (ConverterClass
+        (Name ApplicationSpace)
+        (Converter
+            (Name "ApplicationSpaces")
+            (Description "Map simple spaces to HLA 1.3 HyperSpace")
+            (Parameters
+                (Space "HyperSpace")
+                (HyperSpaceExtents 0 73)
+                (AppSpaceDimension "subspace")
+                (MappedDimensions "one" "two")
+                (Mappings 
+
+                    (Mapping (SimpleSpace "blue_air_space"             ) (AppSpace  0) ("one" "latitude") ("two" "longitude") )
+                    (Mapping (SimpleSpace "red_air_space"              ) (AppSpace  1) ("one" "latitude") ("two" "longitude") )
+                    (Mapping (SimpleSpace "green_air_space"            ) (AppSpace  2) ("one" "latitude") ("two" "longitude") )
+
+                    (Mapping (SimpleSpace "blue_sea_space"             ) (AppSpace  3) ("one" "latitude") ("two" "longitude") )
+                    (Mapping (SimpleSpace "red_sea_space"              ) (AppSpace  4) ("one" "latitude") ("two" "longitude") )
+                    (Mapping (SimpleSpace "green_sea_space"            ) (AppSpace  5) ("one" "latitude") ("two" "longitude") )
+;;
+;; mapping blue_ground_space  --> blue_sea_space (4)
+;;         red_ground_space   --> red_sea_space  (5)
+;;         green_ground_space --> green_sea_space(6)
+;; 
+;; avoids the subscription to the actual DDM Spaces 7, 8, 9 so that
+;; the ground entities from other federates are not subscribed to by the JSAF using
+;; this ddmcvt.rdr definition.
+;;
+;; To see the ground entities on their correct DDM subspace numbers, comment the following three
+;; lines and uncomment those three that follow.
+
+;;                    (Mapping (SimpleSpace "blue_ground_space"          ) (AppSpace  4) ("one" "latitude") ("two" "longitude") )
+;;                    (Mapping (SimpleSpace "red_ground_space"           ) (AppSpace  5) ("one" "latitude") ("two" "longitude") )
+;;                    (Mapping (SimpleSpace "green_ground_space"         ) (AppSpace  6) ("one" "latitude") ("two" "longitude") )
+
+                  (Mapping (SimpleSpace "blue_ground_space"          ) (AppSpace  6) ("one" "latitude") ("two" "longitude") )
+                  (Mapping (SimpleSpace "red_ground_space"           ) (AppSpace  7) ("one" "latitude") ("two" "longitude") )
+                  (Mapping (SimpleSpace "green_ground_space"         ) (AppSpace  8) ("one" "latitude") ("two" "longitude") )
+
+;;
+;; mapping human_space      --> blue_sea_space    and
+;;         blue_human_space --> blue_sea_space, etc...
+;;
+;; has the same effect as for the ground spaces: the human space from
+;; other federates is not subscribed to, so that entity load is not
+;; seen on the JSAF using this ddmcvt.rdr
+;; 
+;;                  (Mapping (SimpleSpace "human_space"                ) (AppSpace ) ("one" "latitude") ("two" "longitude") )
+                    (Mapping (SimpleSpace "blue_human_space"           ) (AppSpace  3) ("one" "latitude") ("two" "longitude") )
+                    (Mapping (SimpleSpace "red_human_space"            ) (AppSpace  7) ("one" "latitude") ("two" "longitude") )
+                    (Mapping (SimpleSpace "green_human_space"          ) (AppSpace  8) ("one" "latitude") ("two" "longitude") )
+
+                    (Mapping (SimpleSpace "fire_space"                 ) (AppSpace 9)  )
+                    (Mapping (SimpleSpace "detonation_space"           ) (AppSpace 10) )
+                    (Mapping (SimpleSpace "emission_space"             ) (AppSpace 11) ("one" "frequency") ("two" "force") )
+                    (Mapping (SimpleSpace "iff_space"                  ) (AppSpace 12) )
+                    (Mapping (SimpleSpace "engineering_space"          ) (AppSpace 13) )
+                    (Mapping (SimpleSpace "ambient_environment_space"  ) (AppSpace 14) )
+                    (Mapping (SimpleSpace "damage_assessment_space"    ) (AppSpace 15) )
+                    (Mapping (SimpleSpace "data_link_space"            ) (AppSpace 16) )
+                    (Mapping (SimpleSpace "set_comment_space"          ) (AppSpace 17) )
+                    (Mapping (SimpleSpace "dynamic_terrain_space"      ) (AppSpace 18) )
+                    (Mapping (SimpleSpace "radio_space"                ) (AppSpace 19) ("one" "frequency") )
+                    (Mapping (SimpleSpace "fedstate_space"             ) (AppSpace 20) )
+                    (Mapping (SimpleSpace "timesync_space"             ) (AppSpace 21) ("one" "apptype") )
+                    (Mapping (SimpleSpace "blue_aggregate_space"       ) (AppSpace 22) ("one" "latitude") ("two" "longitude") )
+                    (Mapping (SimpleSpace "red_aggregate_space"        ) (AppSpace 23) ("one" "latitude") ("two" "longitude") )
+                    (Mapping (SimpleSpace "green_aggregate_space"      ) (AppSpace 24) ("one" "latitude") ("two" "longitude") )
+                    (Mapping (SimpleSpace "aar_space"                  ) (AppSpace 25) )
+                    (Mapping (SimpleSpace "collision_space"            ) (AppSpace 26) )
+                    (Mapping (SimpleSpace "uwa_emission_space"         ) (AppSpace 27) )
+                    (Mapping (SimpleSpace "nasmp_excon_space"          ) (AppSpace 28) )
+                    (Mapping (SimpleSpace "nasmp_alm_space"            ) (AppSpace 29) )
+                    (Mapping (SimpleSpace "weapon_server_space"        ) (AppSpace 30) )
+                    (Mapping (SimpleSpace "sne_space"                  ) (AppSpace 31) )
+                    (Mapping (SimpleSpace "ten_space"                  ) (AppSpace 32) )
+                    (Mapping (SimpleSpace "refuel_space"               ) (AppSpace 33) )
+                    (Mapping (SimpleSpace "saca_space"                 ) (AppSpace 34) )
+                    (Mapping (SimpleSpace "c2_broadcast_space"         ) (AppSpace 35) )
+                    (Mapping (SimpleSpace "c2_permission_space"        ) (AppSpace 36) ("one" "permission_channel") )
+                    (Mapping (SimpleSpace "c2_request_space"           ) (AppSpace 37) ("one" "sim_channel") )
+                    (Mapping (SimpleSpace "c2_scenario_space"          ) (AppSpace 38) ("one" "sim_channel") )
+                    (Mapping (SimpleSpace "cdmts_space"                ) (AppSpace 39) )
+                    (Mapping (SimpleSpace "hawklink_space"             ) (AppSpace 40) ) 
+                    (Mapping (SimpleSpace "tacan_space"                ) (AppSpace 41) )                      
+                    (Mapping (SimpleSpace "h60_app_space"              ) (AppSpace 42) )
+                    (Mapping (SimpleSpace "f18_space"                  ) (AppSpace 43) )
+                    (Mapping (SimpleSpace "marco_polo"                 ) (AppSpace 44) )
+                    (Mapping (SimpleSpace "debrief_space1"             ) (AppSpace 45) )
+;;                  ...................debrief_spaces..........................46 - 63...... 
+                    (Mapping (SimpleSpace "debrief_space20"            ) (AppSpace 64) )
+                    (Mapping (SimpleSpace "p8_space"                   ) (AppSpace 65) )
+                    (Mapping (SimpleSpace "uhfsatcom_space"            ) (AppSpace 66) )
+                    (Mapping (SimpleSpace "linkc2"                     ) (AppSpace 67) )
+                    (Mapping (SimpleSpace "contact_clouds"             ) (AppSpace 68) ("one" "channel"))
+                    (Mapping (SimpleSpace "contactnet"                 ) (AppSpace 69) )
+                    (Mapping (SimpleSpace "contact_display"            ) (AppSpace 70) ("one" "channel"))
+                    (Mapping (SimpleSpace "contact_request"            ) (AppSpace 71) ("one" "channel"))
+                    (Mapping (SimpleSpace "transponder"                ) (AppSpace 72) )
+                    (Mapping (SimpleSpace "laser_space"                ) (AppSpace 73 ) )
+;;Stops a whine since another converter is looking for it.
+                    (Mapping (SimpleSpace "stealth_space"              ) (AppSpace 83 ) )
+                )
+            )
+        )
+    )
+)

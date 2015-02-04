@@ -1,0 +1,176 @@
+;; Hey, emacs, display this as -*-lisp-*-
+
+
+
+("rti"
+
+    ;; This specifies the version of RTI-s that this RID is for.
+    (version D18A)
+
+
+    ;; This section controls how the federation as a whole operates.  
+    ;; Everything in this section must be identical for all federates.
+    (federation_parameters
+
+      (routing_spaces
+        ("HyperSpace"
+	   (type simple)
+	)
+      )
+
+      (connectivity_providers
+        (multicast
+	   MULTICAST_PATH
+	   (packet_size 1408)            ; largest packet size to use
+	   (ratelimit_max_mbps 575.0)    ; max megabits per second
+	   (fragment_timeout 3000)       ; max time to wait for delayed frags
+	   (bundle_timeout 5)            ; maximum delay waiting for bundling
+	   (bundle_flush_threshold 128)  ; bytes left before bundle is full
+	   (socket_poll_interval 5)      ; msec between receiving packets
+	   (base_address "224.22.0.0")   ; base multicast address to use
+	   (port 7001)                   ; UDP port to send to
+	   (ttl 32)                      ; multicast time to live
+	)
+      )
+
+      (transport_types
+        (best_effort
+	   (type              "simple")      ; simple message service
+	   (suppress_dups     false)         ; reflect duplicated updates
+	   (implicit_transfer false)         ; no auto-ownership transfer
+	   (message_service   "best_effort") ; best effort protocol
+	   (message_priority  0x00)          ; lowest priority
+	)
+
+	(reliable
+	   (type              "simple")   ; simple message service
+	   (suppress_dups     false)      ; reflect duplicated updates
+	   (implicit_transfer false)      ; no auto-ownership transfer
+	   (message_service   "reliable") ; reliable multicast protocol
+	   (message_priority  0xff)       ; maximum priority
+	)
+
+	(best_effort_hipri
+	   (type              "simple")      ; simple message service
+	   (suppress_dups     false)         ; reflect duplicated updates
+	   (implicit_transfer false)         ; no auto-ownership transfer
+	   (message_service   "best_effort") ; best effort protocol
+	   (message_priority  0xff)          ; highest priority
+	)
+
+	(semireliable
+	   (type              "simple")   ; simple message service
+	   (suppress_dups     true)       ; suppress duplicated updates
+	   (implicit_transfer false)      ; no auto-ownership transfer
+	   (message_service   "oneshot")  ; use the oneshot protocol
+	   (message_priority  0xc0)       ; fairly high priority
+	   (message_repeats   3)          ; send 3 times
+	   (message_interval  1000)       ; send every 1 second
+	   (message_linger    30000)      ; forget after 30 seconds
+	)
+
+	(state_consistent
+	   (type               "state_consistent")  ; the SC protocol
+	   (suppress_dups      true)      ; suppress duplicated updates
+	   (implicit_transfer  false)     ; no auto-ownership transfer
+	   (heartbeat_interval 10000)     ; send host's state every 10 sec
+	   (heartbeat_timeout  60000)     ; time out hosts after 60 sec
+	)
+
+	(minimum_rate_fast
+	   (type               "minimum_rate")  ; DIS-style heartbeats
+	   (suppress_dups      true)     ; suppress duplicated updates
+	   (implicit_transfer  false)    ; no auto-ownership transfer
+	   (heartbeat_interval 5000)     ; heartbeat every 5 seconds
+	   (timeout_time       12000)    ; timeout after 12 seconds
+	   (heartbeat_priority 0x40)     ; priority of unchanged msgs
+	   (change_priority    0xc0)     ; priority of changed msgs
+	)
+
+	(minimum_rate_medium
+	   (type               "minimum_rate")  ; DIS-style heartbeats
+	   (suppress_dups      true)     ; suppress duplicated updates
+	   (implicit_transfer  false)    ; no auto-ownership transfer
+	   (heartbeat_interval 30000)    ; heartbeat every 30 seconds
+	   (timeout_time       100000)   ; timeout after 100 seconds
+	   (heartbeat_priority 0x40)     ; priority of unchanged msgs
+	   (change_priority    0xa0)     ; priority of changed msgs
+	)
+
+	(minimum_rate_slow
+	   (type               "minimum_rate")  ; DIS-style heartbeats
+	   (suppress_dups      true)     ; suppress duplicated updates
+	   (implicit_transfer  false)    ; no auto-ownership transfer
+	   (heartbeat_interval 60000)    ; heartbeat every 1 minute
+	   (timeout_time       210000)   ; timeout after 3.5 minutes
+	   (heartbeat_priority 0x40)     ; priority of unchanged msgs
+	   (change_priority    0x80)     ; priority of changed msgs
+	)
+      )
+
+      (subscriptions
+         (region_sub_gets_nonregion false) ; how do DM and DDM mix
+	 (nonregion_sub_gets_region false) ; how do DM and DDM mix
+	 (validate_regions false)       ; should we validate region pointers
+	 (force_static_spaces false)    ; should we check FED space assocs
+	 (one_byclass_stream false)     ; use 1 stream all nonregion sends
+      )
+
+      (updates
+	 (sort_attributes  true)  ; should we sort the attributes by size
+	 (pass_times       true)  ; do we deliver times in non-TSO messages
+	 (perfect_filter   false) ; do we region filter or fastpath accept
+	 (send_trans_attrs true)  ; do we list all attrs of this transport
+      )
+
+      (objects
+	 (deletion_memory_length  5000)  ; how long we remember deletions
+	 (creation_announcements  false) ; notify on object creation
+      )
+
+      (queries
+	 (bundle_query_timeout 125)  ; aggregate queries for this long
+	 (query_backoff_window 250)  ; max delay before requesting update
+      )
+
+      (federation
+	 (heartbeat_interval     5)   ; federate heartbeat period in seconds
+	 (join_timeout           6)   ; seconds to wait before joining
+	 (federate_amber_timeout 12)  ; seconds before a federate goes amber
+	 (federate_red_timeout   30)  ; seconds before a federate goes red
+	 (federate_gone_timeout  60)  ; seconds before a federate goes away
+      )
+    )
+
+
+
+    ;; This section controls how your individual federate operates.  
+    ;; Anything in this section may be changed as necessary for each federate.
+    (federate_parameters
+
+      (connectivity
+         (default_uplink "multicast")
+	 (default_server "unnecessary")
+	 (connectivity_map)
+	 (network_device "")             ; multicast network device to use
+	 (receive_buffer_size 1024)      ; kernel socket buffer in Kbytes 
+	 (send_buffer_size 1024)         ; kernel socket buffer in Kbytes 
+      )
+
+      (management_objects
+         (mom_interval 10)            ; seconds between MOM object updates
+      )
+
+      (virtual_terminal
+         (accept_connections true)    ; do we accept telnet for debugging
+      )
+
+      (workarounds
+         (no_syncpoints)
+	 (no_shared)
+      )
+
+      (plugins                         ; plugin modules to load on startup
+      )
+    )
+)
